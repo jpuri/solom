@@ -6,6 +6,8 @@ Solidity provides a logging functionality. Events are an abstration over this. W
 
 Applications can subscribe and listen to these events. The log and its event data is not accessible from within contracts. But contracts can request for Merkle proof of logs.
 
+### Declaring events
+
 Events are declared in a contract and are inheritable. An example of events is:
 
 ```
@@ -30,6 +32,8 @@ contract ClientReceipt {
 }
 ```
 
+### Parts of Log
+
 Log has 2 parts:
 
 1. topics
@@ -38,6 +42,8 @@ Log has 2 parts:
 Attribute `indexed` can be added upto 2 parameters in the Event, these parameters are added to special data structures called `topics`. All parameters without `indexed` attrubute are `abi` encoded in the `data` part of the log.
 
 Topics allow for searching and filtering events, events can also be filtered by address of the contract that emitted them.
+
+### Using events in JS code
 
 The use of above example event in JS api:
 
